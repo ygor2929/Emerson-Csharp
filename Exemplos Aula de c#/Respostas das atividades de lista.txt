@@ -1,0 +1,569 @@
+Nome:Ygor Eduardo da Silva Barbosa
+
+
+Exercício 1: Criar e Popular uma Lista de Inteiros
+Enunciado: Crie um programa que declare uma lista de números inteiros
+(List<int>). Adicione os números 10, 20 e 30 à lista. Por fim, exiba a quantidade
+de elementos na lista.
+
+R:
+using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
+using static System.Console;
+
+namespace ConsoleApp1
+{
+    internal class Program
+    {
+        static void Main(string[] args)
+        {
+            List<int> numeros = new List<int>();
+            numeros.Add(10);
+            numeros.Add(20);
+            numeros.Add(30);
+            WriteLine($"Numeros de elementos na lista: {numeros.Count}");
+            ReadKey();
+        }
+        
+    }
+}
+
+Exercício 2: Inicializar Lista de Strings
+Enunciado: Crie uma lista de strings (List<string>) já inicializada com os nomes
+de três das suas cidades favoritas. Em seguida, use um laço foreach para exibir
+cada cidade em uma nova linha.
+
+R:
+using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
+using static System.Console;
+
+namespace ConsoleApp1
+{
+    internal class Program
+    {
+        static void Main(string[] args)
+        {
+            List<string> cidades = new List<string>();
+            cidades.Add("Maringá");
+            cidades.Add("Sarandi");
+            cidades.Add("Londrina");
+            WriteLine("Minhas cidades favoritas são:");
+            foreach (string cidade in cidades)  
+            {
+                WriteLine(cidade);
+            }
+            ReadKey();
+
+        }
+        
+    }
+}
+Exercício 3: Ler Nomes do Usuário
+Enunciado: Escreva um programa que peça ao usuário para digitar três nomes.
+Armazene esses nomes em uma List<string> e, ao final, exiba a lista completa.
+
+R:
+using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
+using static System.Console;
+
+namespace ConsoleApp1
+{
+    internal class Program
+    {
+        static void Main(string[] args)
+        {
+            List<string> nomes = new List<string>();
+            for (int i = 0; i < 3; i++)
+            {
+                WriteLine("Digite um nome:");
+                string nome = ReadLine();
+                nomes.Add(nome);
+                WriteLine("--------------------------------------------------");
+            }
+            WriteLine("A lista de nomes digitados são:");
+            foreach (string nome2 in nomes)
+            {
+
+                WriteLine(nome2);
+            }
+
+            ReadKey();
+
+        }
+        
+    }
+}
+Exercício 4: Acessar Elementos por Índice
+Enunciado: Crie uma lista de nomes de frutas. Exiba o primeiro e o último
+elemento da lista usando seus respectivos índices.
+
+R:
+using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
+using static System.Console;
+
+namespace ConsoleApp1
+{
+    internal class Program
+    {
+        static void Main(string[] args)
+        {
+            List<string> frutas = new List<string>();
+            frutas.Add("Laranja");
+            frutas.Add("Melancia");
+            frutas.Add("Banana");
+            frutas.Add("Uva");
+            WriteLine("A primeira e a segunda fruta são:");
+            WriteLine(frutas[0]);
+            WriteLine(frutas[3]);
+            ReadKey();
+        }
+       
+        
+    }
+}
+Exercício 5: Verificar se um Item Existe
+Enunciado: Crie uma lista de animais. Peça ao usuário para digitar o nome de um
+animal e verifique se ele está na lista. Exiba uma mensagem informando se o
+animal foi encontrado ou não.
+R:
+using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
+using static System.Console;
+
+namespace ConsoleApp1
+{
+    internal class Program
+    {
+        static void Main(string[] args)
+        {
+            List<string> animais = new List<string>();
+            animais.Add("Gato");
+            animais.Add("Cachorro");
+            animais.Add("Urso");
+            animais.Add("Leão");
+            Write("Digite um animal:");
+            string animalDigitada = ReadLine();
+            int indiceAnimal = animais.IndexOf(animalDigitada);
+            bool temAnimal = animais.Contains(animalDigitada);
+            if (animais.Contains(animalDigitada))
+            {
+                WriteLine($"Sim,a lista tem {animalDigitada}!");
+            }
+            else
+            {
+                WriteLine($"Não,a lista não tem {animalDigitada}!");
+            }
+            ReadKey();
+        }
+       
+        
+    }
+}
+
+Exercício 6: Remover um Item Específico
+Enunciado: Crie uma lista de compras. Adicione alguns itens. Em seguida,
+remova o item "Leite" da lista e exiba a lista final.
+
+R:
+using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
+using static System.Console;
+
+namespace ConsoleApp1
+{
+    internal class Program
+    {
+        static void Main(string[] args)
+        {
+            List<string> compras = new List<string>(){ "Macarrão ","Arroz", "Feijão", "Carne", "Frango" ,"Leite" };
+            WriteLine("Lista:");
+            foreach (string compra in compras)
+            {
+                WriteLine(compra);
+            }
+            compras.Remove("Leite");
+            WriteLine("-------------------------------------------");
+            WriteLine("Lista Atualizada:");
+            foreach (string compra in compras)
+            {
+                WriteLine(compra);
+            }
+            ReadKey();
+        }
+
+
+    }
+}
+
+Exercício 7: Remover um Item por Índice
+Enunciado: Crie uma lista de pontuações (int). Remova a pontuação que está no
+índice 2 e exiba a lista resultante.
+
+R:
+using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
+using static System.Console;
+
+namespace ConsoleApp1
+{
+    internal class Program
+    {
+        static void Main(string[] args)
+        {
+            List<int> pontos = new List<int>() {0,1,2,3,4};
+            WriteLine("Lista:");
+            foreach (int ponto in pontos)
+            {
+                WriteLine(ponto);
+            }
+            pontos.RemoveAt(2);
+            WriteLine("-------------------------------------------");
+            WriteLine("Lista Atualizada tirando o número 2:");
+            foreach (int ponto in pontos)
+            {
+                WriteLine(ponto);
+            }
+            ReadKey();
+        }
+
+
+    }
+}
+
+Exercício 8: Atualizar um Item
+Enunciado: Crie uma lista de cores. Encontre a cor "Azul" e a substitua por "Azul
+Royal".
+R:
+using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
+using static System.Console;
+
+namespace ConsoleApp1
+{
+    internal class Program
+    {
+        static void Main(string[] args)
+        {
+            List<string> cores = new List<string>() {"Laranja","Azul","Vermelho","Amarelo"};
+            WriteLine("Lista:");
+            foreach (string cor in cores)
+            {
+                WriteLine(cor);
+            }
+            WriteLine("----------------------");
+            int indice = cores.IndexOf("Azul");
+            if (indice != -1)
+            {
+                cores[indice] = "Azul Royal";
+            }
+            WriteLine("Lista atualizada com azul royal:");
+            foreach (string cor in cores)
+            {
+                WriteLine(cor);
+            }
+            ReadKey();
+        }
+    }
+}
+
+Exercício 9: Lista de Números Pares
+Enunciado: Crie uma lista e adicione os números de 1 a 10. Em seguida, crie uma
+nova lista apenas com os números pares da primeira lista.
+R:
+using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
+using static System.Console;
+
+namespace ConsoleApp1
+{
+    internal class Program
+    {
+        static void Main(string[] args)
+        {
+            List<int> numeros = new List<int>() {1,2,3,4,5,6,7,8,9,10};
+            WriteLine("Lista:");
+            foreach (int numero in numeros)
+            {
+                WriteLine(numero);
+            }
+            WriteLine("----------------------");
+            List<int> par = new List<int>() { 1, 2, 3, 4, 5, 6, 7, 8, 9, 10 };
+            WriteLine("Lista só com os números pares:");
+            foreach (int numero in numeros)
+            {
+                if (numero % 2 == 0)
+                {
+                    WriteLine(numero);
+                }
+            }
+            ReadKey();
+        }
+
+
+    }
+}
+
+Exercício 10: Ordenar uma Lista
+Enunciado: Crie uma lista de nomes desordenados. Use o método .Sort() para
+ordená-los em ordem alfabética e, em seguida, exiba a lista ordenada.
+
+R:
+using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
+using static System.Console;
+
+namespace ConsoleApp1
+{
+    internal class Program
+    {
+        static void Main(string[] args)
+        {
+            List<string> nomes = new List<string>() {"Ygor","Fernando","Cesar","Marcos","Coutinho"};
+            WriteLine("Lista:");
+            foreach (string nome in nomes)
+            {
+                WriteLine(nome);
+            }
+            WriteLine("----------------------");
+            nomes.Sort();
+            WriteLine("Lista ordenada por ordem alfabética:");
+            foreach (string nome in nomes)
+            {
+                WriteLine(nome);
+            }
+
+            ReadKey();
+        }
+
+
+    }
+}
+
+Exercício 11: Calcular a Soma dos Elementos
+Enunciado: Crie uma List<int> com alguns números. Calcule a soma de todos os
+elementos da lista e exiba o resultado.
+
+R:
+using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
+using static System.Console;
+
+namespace ConsoleApp1
+{
+    internal class Program
+    {
+        static void Main(string[] args)
+        {
+            List<int> somas = new List<int>() {10,20,5,15};
+            WriteLine("Lista:");
+            foreach (int lista in somas)
+            {
+                WriteLine(lista);
+            }
+            WriteLine("---------------------------");
+            int soma = 0;
+            foreach (int soma1 in somas)
+            {
+                soma += soma1;
+            }
+            WriteLine($"A soma da lista é:{soma}");
+
+            ReadKey();
+        }
+
+
+    }
+}
+
+Exercício 12: Encontrar o Maior Número
+Enunciado: Crie uma List<int> e encontre o maior número presente nela.
+Nota: Este exercício introduz o using System.Linq; que oferece muitos métodos
+úteis para coleções.
+
+R:
+using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
+using static System.Console;
+using System.Linq;
+
+namespace ConsoleApp1
+{
+    internal class Program
+    {
+        static void Main(string[] args)
+        {
+            List<int> maior = new List<int>() {10,20,5,15};
+            WriteLine("Lista:");
+            foreach (int lista in maior)
+            {
+                WriteLine(lista);
+            }
+            WriteLine("---------------------------");
+            int maiorValor = maior.Max();
+            WriteLine($"Maior valor da lista:{maiorValor} ");
+
+            ReadKey();
+        }
+
+
+    }
+}
+
+
+Exercício 13: Combinar Duas Listas
+Enunciado: Crie duas listas de string. Combine todos os elementos da segunda
+lista na primeira e exiba o resultado.
+R:
+using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
+using static System.Console;
+using System.Linq;
+
+namespace ConsoleApp1
+{
+    internal class Program
+    {
+        static void Main(string[] args)
+        {
+            List<int> lista1 = new List<int>() {10,20,30};
+            List<int> lista2 = new List<int>() {40,50,60};
+            WriteLine("Lista 1:");
+            foreach (int lista in lista1)
+            {
+                WriteLine(lista);
+            }
+            WriteLine("--------------------------------------");
+            WriteLine("Lista 2:");
+            foreach (int lista in lista2)
+            {
+                WriteLine(lista);
+            }
+            lista1.Add(40);
+            lista1.Add(50);
+            lista1.Add(60);
+            WriteLine("--------------------------------------");
+            WriteLine($"Lista após juntar as duas listas:");
+            foreach (int lista in lista1)
+            {
+                WriteLine(lista);
+            }
+            ReadKey();
+        }
+    }
+}
+Exercício 14: Limpar uma Lista
+Enunciado: Crie uma lista com vários elementos. Use o método .Clear() para
+remover todos os itens e, em seguida, verifique se a lista está vazia exibindo seu
+.Count.
+R:
+using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
+using static System.Console;
+using System.Linq;
+
+namespace ConsoleApp1
+{
+    internal class Program
+    {
+        static void Main(string[] args)
+        {
+            List<int> lista1 = new List<int>() {10,20,30};
+            
+            WriteLine("Lista:");
+            foreach (int lista in lista1)
+            {
+                WriteLine(lista);
+            }
+            WriteLine("--------------------------------------");
+           lista1.Clear();
+            WriteLine($"Após remover todos os itens da lista o indice dela fica:{lista1.Count}");
+            
+            ReadKey();
+        }
+    }
+}
+
+
+Exercício 15: Inverter a Ordem
+Enunciado: Crie uma lista de letras. Use o método .Reverse() para inverter a
+ordem dos seus elementos e exiba a lista invertida.
+
+R:
+using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
+using static System.Console;
+using System.Linq;
+
+namespace ConsoleApp1
+{
+    internal class Program
+    {
+        static void Main(string[] args)
+        {
+            List<int> lista1 = new List<int>() {1,2,3,4,5};
+            
+            WriteLine("Lista:");
+            foreach (int lista in lista1)
+            {
+                WriteLine(lista);
+            }
+            WriteLine("--------------------------------------");
+           lista1.Reverse();
+            WriteLine($"Após a lista ser invertida ela fica:");
+            foreach (int lista in lista1)
+            {
+                WriteLine(lista);
+            }
+
+            ReadKey();
+        }
+    }
+}

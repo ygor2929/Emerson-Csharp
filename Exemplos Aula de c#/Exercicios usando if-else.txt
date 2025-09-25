@@ -1,0 +1,750 @@
+1.Verificação de Paridade: Escreva um programa que declare uma variável inteira e
+use um if-else para verificar se o número é par ou ímpar. Imprima a mensagem
+correspondente.
+
+R:
+
+ int numero , calcular, impar, par;
+            WriteLine("Digite um número:");
+            int numero = int.Parse(ReadLine());
+
+            if (numero % 2 == 0)
+            {
+                WriteLine($"O número {numero} é par");
+
+            }
+            else
+            {
+                WriteLine($"O número {numero} é impar");
+            }
+            ReadKey();
+
+--------------------------------------------------------------------------------------------------------------------------------------------
+2.Classificação por Idade: Declare uma variável inteira para representar a idade de
+uma pessoa. Use if-else if-else para classificá-la em "Criança" (0-12), "Adolescente"
+(13-17), "Adulto" (18-59) ou "Idoso" (60+). Imprima a classificação.
+
+R:
+int idade;
+
+            WriteLine("Digite sua idade:");
+
+            idade = int.Parse(ReadLine());
+
+            if (idade >= 0 && idade <= 12)
+            {
+                WriteLine($"Se você tem {idade} anos você é criança ");
+
+            }
+            else if (idade > 13 && idade <= 17)
+            {
+                WriteLine($"Se você tem {idade} anos você é adolecente");
+
+            }
+            else if (idade > 17 && idade <= 59)
+            {
+                WriteLine($"Se você tem {idade} anos você é adulto");
+            }
+            else
+            {
+                WriteLine($"Se você tem {idade} anos você é idoso");
+            }
+            ReadKey();
+        }
+------------------------------------------------------------------------------------------------------------------------------------------
+
+3.Calculadora Simples (If-Else): Crie um programa que receba dois números e uma
+
+operação (+, -, *, /) como entrada (armazenados em variáveis). Use uma série de if-
+else if para realizar a operação selecionada e exibir o resultado. Lembre-se de tratar
+
+a divisão por zero.
+
+R:
+using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
+using static System.Console;
+
+namespace exercicio3
+{
+    internal class Program
+    {
+        static void Main(string[] args)
+        {
+         double num1, num2, result;
+            string op;
+
+            Write("Digite o primeiro numero:");
+            num1 = double.Parse(ReadLine());
+
+            Write("Digite o primeiro numero:");
+            num2 = double.Parse(ReadLine());
+
+            Write("Digite a operação (+, -, *, /): ");
+            op = ReadLine();
+
+            if (op == "+")
+            {
+                result = num1 + num2;
+                Write($"O resultado de {num1} + {num2} é:{result}");
+            }
+            else if (op == "-")
+            {
+                result = num1 - num2;
+                Write($"O resultado de {num1} - {num2} é:{result}");
+            }
+            else if (op == "*")
+            {
+                result = num1 * num2;
+                Write($"O resultado de {num1} * {num2} é:{result}");
+            }
+            else if (op == "/")
+            {
+                result = num1 + num2;
+                if (num2 != 0)
+                {
+                    Write($"O resultado de {num1} / {num2} é:{result}");
+                }
+                else
+                {
+                    Write("Erro: Divisão por zero não é permitida!");
+                }
+                
+            }
+            else
+            {
+                Write("Operação invalida");
+            }
+            ReadKey();
+        }
+    }
+}
+------------------------------------------------------------------------------------------------------------------------------------------
+4.Dia da Semana: Declare uma variável inteira representando um número de 1 a 7.
+Use um switch para exibir o nome do dia da semana correspondente (1 = Domingo, 2
+= Segunda etc.). Inclua um caso default para números inválidos.
+
+R:
+using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
+using static System.Console;
+
+namespace exercicio3
+{
+    internal class Program
+    {
+        static void Main(string[] args)
+        {
+            int diasdasemana;
+
+            Write("Digite um numero de 1 a 7:");
+             diasdasemana = int.Parse(ReadLine());
+
+            switch (diasdasemana)
+            {
+                case 1:
+                    WriteLine("Domingo");
+                    break;
+                case 2:
+                    WriteLine("Segunda");
+                    break;
+                case 3:
+                    WriteLine("Terça");
+                    break;
+                case 4:
+                    WriteLine("Quarta");
+                    break;
+                case 5:
+                    WriteLine("Quinta");
+                    break;
+                case 6:
+                    WriteLine("Sexta");
+                    break;
+                case 7:
+                    WriteLine("Sábado");
+                    break;
+
+                default:
+                    WriteLine("Numero invalido digite um numero de 1 a 7!");
+                    break;
+            }
+            ReadKey();
+
+
+
+        }
+    }
+}
+
+------------------------------------------------------------------------------------------------------------------------------------------
+5.Verificação de Vogal/Consoante: Escreva um programa que receba um caractere
+(armazenado em uma variável char). Use um switch para verificar se o caractere é
+uma vogal (a, e, i, o, u - maiúsculas ou minúsculas) ou uma consoante. Imprima a
+mensagem adequada.
+
+R:
+using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
+using static System.Console;
+
+namespace exercicio3
+{
+    internal class Program
+    {
+        static void Main(string[] args)
+        {
+            char vogalouconsoante;
+            Write("Digite uma letra:");
+            vogalouconsoante = char.Parse(ReadLine());
+
+            switch (vogalouconsoante)
+            {
+                case 'a':
+                case 'A':
+                case 'e':
+                case 'E':
+                case 'i':
+                case 'I':
+                case 'o':
+                case 'O':
+                case 'u':
+                case 'U':
+                    WriteLine($"A letra {vogalouconsoante} é uma vogal.");
+                    break;
+                default:
+                    WriteLine($"A letra {vogalouconsoante} é consoante.");
+                    break;
+            }
+            ReadKey();
+        }
+    }
+}
+------------------------------------------------------------------------------------------------------------------------------------------
+6.Média Aritmética e Aprovação: Declare três variáveis double para representar as
+notas de um aluno. Calcule a média aritmética. Use um if-else para verificar se a média
+é maior ou igual a 7. Se for, imprima "Aprovado"; caso contrário, imprima "Reprovado".
+
+R:
+using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
+using static System.Console;
+
+namespace exercicio3
+{
+    internal class Program
+    {
+        static void Main(string[] args)
+        {
+            double nota1, nota2, nota3, media;
+            Write("Digite a primeira nota:");
+            nota1 = Convert.ToDouble(ReadLine());
+
+            Write("Digite a segunda nota:");
+            nota2 = Convert.ToDouble(ReadLine());
+
+            Write("Digite a terceira nota:");
+            nota3 = Convert.ToDouble(ReadLine());
+
+            media = (nota1 + nota2 + nota3) / 3;
+
+            if (media >= 7)
+            {
+                WriteLine($"Aluno com a media {media} esta aprovado.");
+            }
+            else
+            {
+                WriteLine($"Aluno com a media {media} esta reprovado.");
+            }
+            ReadKey();
+        }
+    }
+}
+------------------------------------------------------------------------------------------------------------------------------------------
+7.Desconto por Faixa de Valor: Declare uma variável decimal representando o valor
+total de uma compra. Aplique um desconto usando if-else if-else:
+ Se o valor for menor que R$50, sem desconto.
+ Se o valor estiver entre R$50 e R$100 (inclusive), desconto de 5%.
+ Se o valor for maior que R$100, desconto de 10%. Imprima o valor original e
+o valor com desconto.
+
+R:
+using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
+using static System.Console;
+
+namespace exercicio3
+{
+    internal class Program
+    {
+        static void Main(string[] args)
+        {
+            decimal valorcompra = 120.00m;
+            decimal valorcomdesconto = valorcompra;
+            decimal desconto = 0;
+            
+            if (valorcompra >= 50 && valorcompra <= 100)
+            {
+                desconto = 0.50m;
+            }
+            else if (valorcompra > 100)
+            {
+                desconto = 0.10m;
+            }
+            valorcomdesconto -= valorcompra * desconto;
+            WriteLine($"Valor da compra R$: { valorcompra:F2}");
+            WriteLine($"Valor do desconto R$:{(desconto*100):F0}");
+            WriteLine($"Valor com desconto R$:{valorcomdesconto:F2}");
+            ReadKey();
+
+        }
+    }
+}
+------------------------------------------------------------------------------------------------------------------------------------------
+8.Ano Bissexto: Declare uma variável inteira para representar um ano. Use uma
+estrutura if-else com as regras para determinar se o ano é bissexto (divisível por 4,
+mas não por 100, a menos que também seja divisível por 400). Imprima se o ano é
+bissexto ou não.
+
+R:
+using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
+using static System.Console;
+
+namespace exercicio3
+{
+    internal class Program
+    {
+        static void Main(string[] args)
+        {
+           int ano;
+            Write("Digite um ano:");
+            ano = int.Parse(ReadLine());
+
+            if ((ano % 4 == 0 && ano % 100 != 0) || (ano % 400 == 0))
+            {
+                WriteLine($"O ano {ano} é bissexto.");
+            }
+            else
+            {
+                WriteLine($"O ano {ano} não é bissexto.");
+            }
+            ReadKey();
+
+
+        }
+    }
+}
+------------------------------------------------------------------------------------------------------------------------------------------
+9.Calculadora Simples (Switch): Refaça o exercício 3, mas utilizando a estrutura
+switch para selecionar a operação a ser realizada.
+
+R:
+using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
+using static System.Console;
+
+namespace exercicio3
+{
+    internal class Program
+    {
+        static void Main(string[] args)
+        {
+            double num1, num2;
+
+            Write("Digite o primeiro numero:");
+            num1 = double.Parse(ReadLine());
+
+            Write("Digite o primeiro numero:");
+            num2 = double.Parse(ReadLine());
+
+            Write("Digite a operação (+, -, *, /): ");
+            string op = ReadLine();
+
+            switch (op)
+            {
+                case "+":
+                    Write($"O resultado de {num1} + {num2} é:{num1 + num2}");
+                    break;
+            
+                case "-":
+                Write($"O resultado de {num1} - {num2} é:{num1 - num2}");
+                break;
+
+                case "*":
+                Write($"O resultado de {num1} * {num2} é:{num1 * num2}");
+                    break;
+
+                case "/":
+                    if (num2 != 0) 
+                    Write($"O resultado de {num1} / {num2} é:{num1 / num2}");
+                    else
+                    {
+                        Write("Erro: Divisão por zero não é permitida!");
+                    }
+                    break;
+                default:
+                    Write("Operação invalida!!!");
+                    break;
+            }
+            ReadKey();
+
+
+        }
+    }
+}
+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+10.Nível de Alerta: Declare uma variável inteira representando um nível de alerta (1
+a 5). Use um switch para exibir uma mensagem diferente para cada nível:
+ 1: "Nível de alerta baixo."
+ 2: "Nível de alerta moderado."
+ 3: "Nível de alerta elevado."
+ 4: "Nível de alerta crítico."
+ 5: "EMERGÊNCIA!" Inclua um caso default para níveis inválidos.
+
+R:
+using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
+using static System.Console;
+
+namespace exercicio3
+{
+    internal class Program
+    {
+        static void Main(string[] args)
+        {
+            int niveldealerta;
+
+            Write("Digite um numero de 1 a 5:");
+            niveldealerta = int.Parse(ReadLine());
+
+            switch (niveldealerta)
+            {
+                case 1:
+                    WriteLine("Baixo");
+                    break;
+                case 2:
+                    WriteLine("Moderado");
+                    break;
+                case 3:
+                    WriteLine("Elevado");
+                    break;
+                case 4:
+                    WriteLine("Crítico");
+                    break;
+                case 5:
+                    WriteLine("EMERGENCIA!!!!");
+                    break;
+               
+                default:
+                    WriteLine("Numero invalido digite um numero de 1 a 5!");
+                    break;
+            }
+            ReadKey();
+
+        }
+    }
+}
+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+11.Comparação de Três Números: Declare três variáveis inteiras. Use estruturas if-
+else aninhadas para encontrar e imprimir o maior dos três números.
+
+R:
+using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
+using static System.Console;
+
+namespace exercicio3
+{
+    internal class Program
+    {
+        static void Main(string[] args)
+        {
+            int num1, num2, num3;
+
+            Write("Digite o primeiro número: ");
+            num1 = int.Parse(ReadLine());
+
+            Write("Digite o segundo número: ");
+            num2 = int.Parse(ReadLine());
+
+            Write("Digite o terceiro número: ");
+            num3 = int.Parse(ReadLine());
+
+            if (num1 >= num2 && num1 >= num3)
+            {
+                WriteLine($"O maior número é: {num1}");
+            }
+            else if (num2 >= num1 && num2 >= num3)
+            {
+                WriteLine($"O maior número é: {num2}");
+            }
+            else
+            {
+                WriteLine($"O maior número é: {num3}");
+            }
+
+            ReadKey();
+        }
+    }
+}
+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+12.Verificação de Triângulo: Declare três variáveis inteiras representando os lados
+de um possível triângulo. Use if-else para verificar se os valores podem formar um
+triângulo (a soma de quaisquer dois lados deve ser maior que o terceiro lado). Imprima
+se é um triângulo válido ou não.
+
+R:
+using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
+using static System.Console;
+
+namespace exercicio3
+{
+    internal class Program
+    {
+        static void Main(string[] args)
+        {
+            int a, b, c;
+            Write("Digite o lado a do trinagulo:");
+            a = int.Parse(ReadLine());
+
+            Write("Digite o lado b do triangulo:");
+            b = int.Parse(ReadLine());
+
+            Write("Digite o lado c do triangulo:");
+            c = int.Parse(ReadLine());
+
+            if (a + b > c && a + c > b && b + c > a)
+            {
+                WriteLine("É um triangulo valido");
+            }
+            else
+            {
+                WriteLine("Não é um trinagulo valido");
+            }
+            ReadKey();
+
+
+
+        }
+    }
+}
+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+13.Conversão de Nota para Conceito: Declare uma variável double representando
+a nota de um aluno (0 a 10). Use um switch para converter a nota em um conceito:
+ 9.0 a 10.0: "A"
+ 7.0 a 8.9: "B"
+ 5.0 a 6.9: "C"
+ a 4.9: "D" Inclua um caso default para notas inválidas.
+
+R:
+using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
+using static System.Console;
+
+namespace exercicio3
+{
+    internal class Program
+    {
+        static void Main(string[] args)
+        {
+           double nota = 6.5;
+            string conceito;
+
+            switch ((int)nota / 1)
+            {
+                case 10:
+                case 9:
+                    conceito = "A";
+                    break;
+                case 8:
+                case 7:
+                    conceito = "B";
+                    break;
+                case 6:
+                case 5:
+                    conceito = "C";
+                    break;
+                case 4:
+                case 3:
+                case 2:
+                case 1:
+                case 0:
+
+                    conceito = "D";
+                    break;
+                default:
+                    conceito = "Nota inválida, digite uma nota entre 0 a 10";
+                    break;
+            }
+
+            WriteLine($"O resultado da nota do aluno é: {conceito}");
+            ReadKey();
+
+
+        }
+    }
+}
+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+14.Operações com Números Pares/Ímpares: Declare duas variáveis inteiras. Se
+ambas forem pares, some-as. Se ambas forem ímpares, multiplique-as. Se uma for
+par e a outra ímpar, subtraia a menor da maior. Use estruturas if-else para realizar a
+operação correta e exibir o resultado.
+
+R:
+using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
+using static System.Console;
+
+namespace exercicio3
+{
+    internal class Program
+    {
+        static void Main(string[] args)
+        {
+            int num1, num2;
+            Write("Digite o primeiro número:");
+            num1 = int.Parse(ReadLine());
+
+            Write("Digite o segundo número:");
+            num2 = int.Parse(ReadLine());
+
+            int result;
+
+
+            if (num1 % 2 == 0 && num2 % 2 == 0)
+            {
+                result = num1 + num2;
+                WriteLine($"Os dois números são pares então serão somadados.O resultado é: {result}");
+
+            }else if (num1 % 2  != 0 && num2 % 2  != 0)
+            {
+                result = num1 * num2;
+                WriteLine($"Os dois números são ímpares então serão multiplicados.O resultado é: {result}");
+            }
+            else
+            {
+                if (num1 > num2)
+                
+                    result = num1 - num2;
+                else
+                {
+                    result = num2 - num1;
+                }
+                WriteLine($"Um numero é impar e o outro e par então serão subtraidos.O resultado é: {result}");
+
+            }
+            ReadKey();
+        }
+    }
+}
+------------------------------------------------------------------------------------------------------------------------------------------
+15.Menu Interativo: Crie um programa que exiba um menu com três opções (1 -
+Soma, 2 - Subtração, 3 - Sair). Peça ao usuário para digitar sua escolha
+(armazenada em uma variável inteira). Use um switch para executar a ação
+correspondente:
+ Caso 1: Peça dois números e exiba a soma.
+ Caso 2: Peça dois números e exiba a subtração (primeiro menos o segundo).
+ Caso 3: Exiba uma mensagem de saída.
+ Caso default: Exiba uma mensagem de opção inválida.
+
+R:
+
+using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
+using static System.Console;
+
+namespace exercicio3
+{
+    internal class Program
+    {
+        static void Main(string[] args)
+        {
+            int menu;
+            WriteLine("MENU");
+            WriteLine("1 - Soma");
+            WriteLine("2 - Subtração");
+            WriteLine("3 - Sair");
+            Write("Escolha uma das opção: ");
+            menu = int.Parse(ReadLine());
+
+            WriteLine("------------------------------------------------------------------------");
+
+            switch (menu)
+            {
+                case 1:
+                    {
+                        int n1, n2, soma;
+                        Write("Digite o primeiro número:");
+                        n1 = int.Parse(ReadLine());
+                        Write("Digite o segundo número:");
+                        n2 = int.Parse(ReadLine());
+                        WriteLine($"Resultado da soma: {n1 + n2}");
+                        break;   
+                    }
+                case 2:
+                    {
+                        int n1, n2, subtracao;
+                        Write("Digite o primeiro número:");
+                        n1 = int.Parse(ReadLine());
+                        Write("Digite o segundo número:");
+                        n2 = int.Parse(ReadLine());
+                        WriteLine($"Resultado da subtracao: {n1 - n2}");
+                        break;
+                    }
+                case 3:
+                    {
+                        WriteLine("Obrigado por usar o sistema de YGOR");
+                            break;
+
+                    }
+                default:
+                    {
+                        WriteLine("Opção invalida,digite um numero de 1 a 3.");
+                            break;
+                    }
+            }
+            ReadKey();
+
+        }
+    }
+}
